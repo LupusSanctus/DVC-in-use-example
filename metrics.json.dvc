@@ -1,0 +1,9 @@
+md5: cf276d119156c4f6f192d97b79077029
+wdir: .
+outs:
+- path: metrics.json
+  md5: 52041044fa5092e8fcd7ca50d7deb782
+  persist: false
+  cache: true
+  metric:
+    type: raw

@@ -1,0 +1,8 @@
+wdir: ..
+md5: 4c93d31ea902205846f8e55a63775081
+outs:
+- persist: false
+  metric: false
+  cache: true
+  md5: e22f41f1f376882ef0d07cd6f75fb7a5
+  path: model_weights/resnext101_32x4d-29e315fa.pth
