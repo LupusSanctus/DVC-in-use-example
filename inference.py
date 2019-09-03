@@ -51,7 +51,7 @@ def main():
     class_key = class_id_to_key[class_id]
     classname = key_to_classname[class_key]
 
-    print("'{}': '{}' is a '{}' | Confidence: {}".format(arch, path_img, classname, round(max.item(), 3)))
+    print("'{}': '{}' is a '{}' | Confidence: {}".format(arch, path_img, classname, round(max.item() * 100, 3)))
 
 
 if __name__ == '__main__':

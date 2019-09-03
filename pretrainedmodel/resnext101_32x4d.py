@@ -27,6 +27,7 @@ class ResNeXt101_32x4d(nn.Module):
         self.features = resnext101_32x4d_features
         self.avg_pool = nn.AvgPool2d((7, 7), (1, 1))
         self.last_linear = nn.Linear(2048, num_classes)
+        self.softmax = nn.Softmax(dim=1)
 
     def logits(self, input):
         x = self.avg_pool(input)
@@ -37,6 +38,7 @@ class ResNeXt101_32x4d(nn.Module):
     def forward(self, input):
         x = self.features(input)
         x = self.logits(x)
+        x = self.softmax(x)
         return x
 
 
