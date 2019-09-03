@@ -1,7 +1,8 @@
+import io
+
 import dvc.api as dvcapi
 import torch
 import torch.nn as nn
-
 from pretrainedmodel.modelfeatures.resNeXt101_32x4d_features import resnext101_32x4d_features
 
 pretrained_settings = {
@@ -16,9 +17,6 @@ pretrained_settings = {
         }
     }
 }
-
-with dvcapi.open('model_weights/resnext101_32x4d-29e315fa.pth', remote='gsremote', mode="rb", encoding=None) as weights:
-    model_weights = torch.load(weights)
 
 
 class ResNeXt101_32x4d(nn.Module):
@@ -49,6 +47,9 @@ def resnext101_32x4d(num_classes=1000, pretrained='imagenet'):
         assert num_classes == settings['num_classes'], \
             "num_classes should be {}, but is {}".format(settings['num_classes'], num_classes)
 
+        weights = dvcapi.read('model_weights/resnext101_32x4d-29e315fa.pth', remote='gsremote', mode="rb",
+                              encoding=None)
+        model_weights = torch.load(io.BytesIO(weights))
         model.load_state_dict(model_weights)
         model.input_space = settings['input_space']
         model.input_size = settings['input_size']
