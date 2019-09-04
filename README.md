@@ -7,7 +7,7 @@ Default image for classification is <tt>data/cat.jpg</tt>. To specify the image 
 ```
 python3 inference.py --path_img data/croco.jpg              
 ```
-Run unit tests (described in utest_inference.py) to test classifier results in the following way:
+Run unit tests (described in <tt>utest_inference.py</tt>) to test classifier results in the following way:
 ```
 python3 -m unittest test.utest_inference -v
 ```
