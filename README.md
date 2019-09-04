@@ -3,7 +3,7 @@
 ```
 python3 inference.py
 ```
-* Default image for classification is <tt>data/cat.jpg</tt>. To specify the image use <tt>--path_img</tt> key: 
+Default image for classification is <tt>data/cat.jpg</tt>. To specify the image use <tt>--path_img</tt> key: 
 ```
 python3 inference.py --path_img data/croco.jpg              
 ```
