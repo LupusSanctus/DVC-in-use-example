@@ -48,8 +48,7 @@ def run_classifier(model, path_img):
 def main():
     global args
     args = parser.parse_args()
-    model = resnext101_32x4d(num_classes=1000,
-                             pretrained='imagenet')
+    model = resnext101_32x4d(num_classes=1000, pretrained='imagenet')
 
     path_img = args.path_img
 
